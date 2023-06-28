@@ -6,9 +6,9 @@ class AddUser extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
-            firstname: "",
-            lastname: "",
-            age: 1,
+            first_name: "",
+            last_name: "",
+            email: 1,
             isHappy: false
         }
     }
@@ -16,17 +16,17 @@ class AddUser extends React.Component{
     render() {
         return (
             <form ref={(el) => this.myForm = el}>
-                <input placeholder="Имя" onChange={(e) => this.setState({ firstname: e.target.value})} />
-                <input placeholder="Фамилия" onChange={(e) => this.setState({ lastname: e.target.value})} />
-                <input placeholder="Возрвст" onChange={(e) => this.setState({ age: e.target.value})} />
+                <input placeholder="Имя" onChange={(e) => this.setState({ first_name: e.target.value})} />
+                <input placeholder="Фамилия" onChange={(e) => this.setState({ last_name: e.target.value})} />
+                <input placeholder="Email" onChange={(e) => this.setState({ email: e.target.value})} />
                 <label htmlFor="isHappy">Счастлив?</label>
                 <input type="checkbox" id="isHappy" onChange={(e) => this.setState({ isHappy: e.target.checked})} />
                 <button type='button' onClick={() => {
                     this.myForm.reset()
                     this.userAdd = {
-                        firstname: this.state.firstname,
-                        lastname: this.state.lastname,
-                        age: this.state.age,
+                        first_name: this.state.first_name,
+                        last_name: this.state.last_name,
+                        email: this.state.email,
                         isHappy: this.state.isHappy
                     }
                     if (this.props.user)
